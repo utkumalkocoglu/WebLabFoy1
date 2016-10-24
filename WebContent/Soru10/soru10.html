@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		var veriler = $("#veriler div").length;
+		var sayi = 0;
+		var gorunum = 0;
+		$("#veriler div").hide();
+		var st = setInterval("$.Dongu()", 1000);
+
+		$.Dongu = function() {
+
+			if (gorunum == 0) {
+				if (sayi < veriler - 1) {
+					$("#veriler div:eq(" + sayi + ")").fadeIn("fast");
+					sayi++;
+				} else {
+					$("#veriler div:eq(" + sayi + ")").fadeIn("fast");
+					sayi = veriler - 1;
+					gorunum = 1;
+				}
+			}
+			if (gorunum == 1) {
+				if (sayi > 0) {
+					$("#veriler div:eq(" + sayi + ")").fadeOut("fast");
+					sayi--;
+				} else {
+					$("#veriler div:eq(" + sayi + ")").fadeOut("fast");
+					sayi = 0;
+					gorunum = 0;
+				}
+			}
+		}
+
+	});
+</script>
+</head>
+<body>
+
+
+	<div id="veriler">
+		<div id="1"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="2"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="3"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="4"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="5"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="6"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="7"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="8"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="9"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+		<div id="10"
+			style="width: 250px; height: 80px; display: none; background-color: red;">
+			<font color="white"> Ne mutlu Türküm diyene !
+		</div>
+		<br>
+
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Selam</title>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#button1").click(function(){
+		var gun = $("#gun").val();
+		var ay= $("#ay").val();
+		var yil = $("#yil").val();
+		
+		var d=new Date();
+		var bugun=d.getDate();
+		var buay=d.getMonth()+1;
+		var buyil = d.getFullYear();
+		
+		var sonucgun=0;
+		if(bugun<gun)
+			{
+			bugun=bugun+30; buay =buay-1;
+			}
+		sonucgun=bugun-gun;
+		if(buay<ay)
+			{
+			buay=buay+12; buyil=buyil-1;
+			}
+		sonucgun=sonucgun+((buay-ay)*30);
+		if(buyil<yil)
+		{
+			alert("HATALI TARÝH SEÇÝLDÝ")
+		}
+		else{
+			sonucgun=sonucgun+((buyil-yil)*365);
+			alert(sonucgun);
+		}	
+	});
+});
+</script>
+</head>
+<body>
+Gun:
+<select id="gun" size="10" style="width:50px;">
+<script type="text/javascript">
+var i=0;
+for (i=1;i<=31;i++)
+{
+document.write("<option value="+i+">"+i+"</option>");
+
+}
+</script>
+</select>
+
+Ay:
+<select id="ay" size="10" style="width:50px;">
+<script type="text/javascript">
+var i=0;
+for (i=1;i<=12;i++)
+{
+document.write("<option value="+i+">"+i+"</option>");
+
+}
+</script>
+</select>
+Yil:
+<select id="yil" size="10" style="width:70px;">
+<script type="text/javascript">
+var i=0;
+for (i=2016;i>=1907;i--)
+{
+document.write("<option value="+i+">"+i+"</option>");
+
+}
+</script>
+
+
+<input type="button" id="button1" value="Tarih Sec">
+
+</body>
+</html>
